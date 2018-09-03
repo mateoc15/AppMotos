@@ -1,0 +1,47 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1 id="page-heading1" style="color:#000000;text-align:center;">
+        Moto App
+    </h1>
+    <img class="imagenlogo" src="assets/imgs/motorcycle-512.png" />
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-label class="titulo" color="primary" stacked>Pais</ion-label>
+                <ion-select>
+                    <ion-icon name="stats"></ion-icon>
+                    <ion-option value="f">+57</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label class="titulo" color="primary" stacked>Celular</ion-label>
+                    <ion-input type="number" placeholder="Celular"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div>
+        <button full ion-button class="button" ion-button round (click)="loginCellPhone()">Login</button>
+    </div>
+    <div>
+        <button full ion-button (click)="loginWithFacebook()">Login with Facebook</button>
+    </div>
+
+
+</ion-content>

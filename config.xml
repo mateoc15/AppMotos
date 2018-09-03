@@ -82,4 +82,11 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-plugin-firebase" spec="^1.1.2" />
+    <plugin name="cordova-plugin-facebook4" spec="^2.3.0">
+        <variable name="APP_ID" value="724211927937098" />
+        <variable name="APP_NAME" value="MotoApp" />
+    </plugin>
+    <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
 </widget>
