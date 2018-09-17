@@ -31,14 +31,12 @@
             <ion-col>
                 <ion-item>
                     <ion-label class="titulo" color="primary" stacked>Celular</ion-label>
-                    <ion-input type="number" placeholder="Celular"></ion-input>
+                    <ion-input type="number" placeholder="Celular" [(ngModel)]="phoneNumber"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
     </ion-grid>
-    <div>
-        <button full ion-button class="button" ion-button round (click)="loginCellPhone()">Login</button>
-    </div>
+    <button ion-button block (click)="signIn(phoneNumber)">Sign up</button>
     <div>
         <button full ion-button (click)="loginWithFacebook()">Login with Facebook</button>
     </div>

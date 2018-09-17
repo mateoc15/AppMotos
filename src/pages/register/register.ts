@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { HomeTabsPage } from '../home-tabs/home-tabs';
 
 /**
  * Generated class for the RegisterPage page.
@@ -24,7 +24,7 @@ export class RegisterPage {
   }
 
   completeSignUp(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomeTabsPage);
   }
 
 }

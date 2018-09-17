@@ -9,34 +9,45 @@ import { HttpModule } from '@angular/http';
 //providers
 import { Facebook } from '@ionic-native/facebook'
 import { AuthProvider } from '../providers/auth/auth';
-import { DatePicker } from '@ionic-native/date-picker';
+import { ApiRestProvider } from '../providers/api-rest/api-rest';
+
 
 //pages
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-
-
 import { LoginPageModule } from '../pages/login/login.module';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireModule } from 'angularfire2';
+import { HomeTabsPage } from '../pages/home-tabs/home-tabs';
+import { VerificationPage } from '../pages/verification/verification';
+import { NewTripPage } from '../pages/new-trip/new-trip';
+
+//components
+import { ExpandableComponent } from '../components/expandable/expandable'
+ 
+//firebase
+import firebase from 'firebase';
+
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire/';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyALeMKCIUJIzM8G94wtc1iW9nIQBySR7oA",
-  authDomain: "motoapp-b9507.firebaseapp.com",
-  databaseURL: "https://motoapp-b9507.firebaseio.com",
-  projectId: "motoapp-b9507",
-  storageBucket: "motoapp-b9507.appspot.com",
-  messagingSenderId: "772050837774"
+    apiKey: "AIzaSyALeMKCIUJIzM8G94wtc1iW9nIQBySR7oA",
+    authDomain: "motoapp-b9507.firebaseapp.com",
+    databaseURL: "https://motoapp-b9507.firebaseio.com",
+    projectId: "motoapp-b9507",
+    storageBucket: "motoapp-b9507.appspot.com",
+    messagingSenderId: "772050837774"
 };
+
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    RegisterPage
+    RegisterPage,
+    HomeTabsPage,
+    VerificationPage,
+    NewTripPage
   ],
   imports: [
     BrowserModule,
@@ -46,13 +57,18 @@ var firebaseConfig = {
     LoginPageModule,
     HttpModule,
     HttpClientModule
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    HomeTabsPage,
+    VerificationPage,
+    NewTripPage
+    
+    
   ],
   providers: [
     StatusBar,
@@ -60,7 +76,8 @@ var firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Facebook,
     AuthProvider,
-    DatePicker
+    ApiRestProvider,
+    ExpandableComponent
   ]
 })
 export class AppModule {}

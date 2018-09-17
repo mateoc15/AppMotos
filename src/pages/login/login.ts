@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
-import { AuthProvider } from '../../providers/auth/auth';
 import { Facebook } from '@ionic-native/facebook'
-import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 import * as firebase from 'firebase/app';
 
 
@@ -20,7 +20,7 @@ import * as firebase from 'firebase/app';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public facebook: Facebook, 
@@ -32,9 +32,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  loginCellPhone(){
-    this.navCtrl.push(RegisterPage);
-  }
 
   loginWithFacebook() {
     if (this.platform.is('cordova')) {
@@ -59,4 +56,12 @@ export class LoginPage {
     }
   }
 
-}
+
+    signIn(phoneNumber: number) { 
+      this.navCtrl.push(RegisterPage);
+
+    }
+
+  }
+
+

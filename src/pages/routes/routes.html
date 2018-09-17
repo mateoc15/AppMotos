@@ -1,0 +1,82 @@
+<!--
+  Generated template for the RoutesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>RUTAS</ion-title>
+
+    </ion-navbar>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="mymodel">
+            <ion-segment-button value="segment1">
+                Rutas Populares
+            </ion-segment-button>
+            <ion-segment-button value="segment2">
+                Mis Rutas
+            </ion-segment-button>
+        </ion-segment>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div [ngSwitch]="mymodel">
+        <ion-list *ngSwitchCase="'segment1'">
+            <ion-item>
+                <ion-item *ngFor="let trip of trips">
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-header>
+                                {{trip.name}}
+                            </ion-card-header>
+                        </ion-card-header>
+
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnaa6XJ3vFSqrT4aYXG7L1avuTV6MYcRRmDpxU8LYacMKktNk20g">
+                        <ion-fab right top>
+                            <button ion-fab>
+                                            <ion-icon name="pin"></ion-icon>
+                                          </button>
+                        </ion-fab>
+
+                        <ion-item>
+                            <ion-icon name="information" item-start large></ion-icon>
+                            <h2>Detalles</h2>
+                            <p>{{trip.description}}</p>
+                        </ion-item>
+
+
+                        <ion-item>
+                            <span item-start>Distancia: </span>
+                            <span item-start>{{trip.distance}}</span>
+                        </ion-item>
+                        <ion-item>
+                            <span item-start>Dificultad: </span>
+                            <span item-start>{{trip.level}}</span>
+                            <button ion-button icon-start clear item-end>
+                                                <ion-icon name="navigate"></ion-icon>
+                                                Empezar
+                                              </button>
+                        </ion-item>
+                    </ion-card>
+                </ion-item>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'segment2'">
+            <ion-fab bottom right (click)="newTrip()">
+                <button ion-fab><ion-icon name="add"></ion-icon></button>
+
+            </ion-fab>
+        </ion-list>
+
+    </div>
+
+
+</ion-content>

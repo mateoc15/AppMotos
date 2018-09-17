@@ -1,0 +1,46 @@
+<!--
+  Generated template for the NewTripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>NewTrip</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="formTrip" (submit)="addTrip()">
+        <ion-list>
+            <ion-item>
+                <ion-label class="titulo" color="primary" stacked>Nombre</ion-label>
+                <ion-input type="text" placeholder="Nombre" formControlName="tripName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="titulo" color="primary" stacked>Descripcion</ion-label>
+                <ion-input type="text" placeholder="Descripcion" formControlName="tripDescription"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="titulo" color="primary" stacked>Dificultad</ion-label>
+                <ion-select formControlName="tripLevel">
+                    <ion-option value="f">Fácil</ion-option>
+                    <ion-option value="m">Medio</ion-option>
+                    <ion-option value="d">Difícil</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label class="titulo" color="primary" stacked>Punto de partida</ion-label>
+                <ion-input type="text" placeholder="Punto de partida" formControlName="startPoint"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label class="titulo" color="primary" stacked>Punto de llegada</ion-label>
+                <ion-input type="text" placeholder="Destino" formControlName="finalPoint"></ion-input>
+            </ion-item>
+            <button full ion-button color="secondary" type="submit">Añadir ruta</button>
+        </ion-list>
+    </form>
+</ion-content>
